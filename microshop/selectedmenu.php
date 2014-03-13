@@ -3,8 +3,7 @@
     <base href="/microshop/">
     <title>已选菜品</title>
     <meta charset="utf-8">
-    <meta name="viewport"
-          content="width=device-width, minimum-scale=1, maximum-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1,maximum-scale=1, user-scalable=no">
 </head>
 <body ryt12322="1">
 <link rel="apple-touch-icon" href="pic_01.jpg">
@@ -21,7 +20,8 @@
     //初始化一个DishesPool
     var pool = (function (window) {
         var p = new DishesPool(new Array(), 0, 0);
-        p.parseJson('{"a":[{"d":"10001  ","s":"","p":31,"no":1,"n":"至尊深井烧鹅","u":"份"}],"m":31,"n":1}');
+        p.parseJson('{"a":[{"d":"10001  ","s":"","p":31,"no":1,"n":"至尊深井烧鹅","u":"份"}],"m":31,"n":1},' +
+            '{"a":[{"d":"10001  ","s":"","p":31,"no":1,"n":"至尊深井烧鹅11","u":"份"}],"m":31,"n":1}');
         return p;
     })(window);
     function addDishes(dishesId, price, name, unitName) {
@@ -195,7 +195,7 @@
     }
 
     function redSelectDishes() {
-        window.location.href = 'wechat/toSelfMenu.do?mobilephone=&weChatId=o2bV2t71sI1w0cTQpKxjCPBvPYN0&userInfoId=&date=&shopId=0002&poolJson=' + pool.toString();
+        window.location.href = 'menu.php?mobilephone=&weChatId=o2bV2t71sI1w0cTQpKxjCPBvPYN0&userInfoId=&date=&shopId=0002&poolJson=' + pool.toString();
     }
 
     function redSelectedDishes() {

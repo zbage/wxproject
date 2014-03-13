@@ -3,8 +3,7 @@
     <base href="/microshop/">
     <title>点餐</title>
     <meta charset="utf-8">
-    <meta name="viewport"
-          content="width=device-width, minimum-scale=1, maximum-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="viewport"   content="width=device-width, minimum-scale=1, maximum-scale=1,maximum-scale=1, user-scalable=no">
 </head>
 <body ryt12322="1">
 <link rel="apple-touch-icon" href="pic_01.jpg">
@@ -26,11 +25,14 @@ $(document).ready(function () {
     $('.mobilescroll').each(function () {
         this.touchScroll();
     });
+    //透明层不显示
+    //$('.dis_mask').hide();
 });
 var shopId = "0002";
 var curDishesTypeId = "01";
 var curLabelId = "0";
 var nextPageNo = "";
+var showVisible = "hide";//hide|show
 //初始化一个DishesPool
 var pool = (function (window) {
     var p = new DishesPool(new Array(), 0, 0);
@@ -106,7 +108,7 @@ $(function () {
      }
      }
      }*/
-    if ("show") {
+    if (showVisible == "show") {
         addmenu("JS_SelectShop");
     }
     $('#selDishesType').click(function () {
@@ -462,7 +464,7 @@ function selfMenuDetail(_dishesId) {
 
 </div>
 <!-- /content -->
-<div class="dis_mask" style="display: block;"></div>
+<div class="dis_mask" style="display: none;"></div>
 <div id="dialog_JS_HotDishes">
     <p class="dialog_title">选择菜品类型</p>
 
@@ -576,45 +578,45 @@ function selfMenuDetail(_dishesId) {
     </div>
 </div>
 <!--/dialog_JS_addMenu-->
-<div id="dialog_JS_SelectShop" style="bottom: 0px;">
-    <p class="dialog_title">选择门店</p>
-
-    <p class="btn_valid btn_finish" id="selShop">完成</p>
-
-    <div class="listData_Box">
-        <div class="mobilescroll" style="max-height:200px; overflow:hidden;">
-            <table cellpadding="0" cellspacing="0" border="0" class="listTab2 JS_listData backColor" width="100%"
-                   bgcolor="#FFF" id="label_JS_listShop">
-
-                <tbody>
-                <tr class="active_bg" shopid="0002">
-                    <td width="80%" style="font-weight: bold; color: rgb(56, 84, 136); border-top-left-radius: 8px;">
-                        珠江路店
-                    </td>
-                    <td width="20%" align="right" style="border-top-right-radius: 8px;"><span class="icon_curr"></span>
-                    </td>
-                </tr>
-
-                <tr class="active_bg" shopid="0003">
-                    <td width="80%">中华门店</td>
-                    <td width="20%" align="right"></td>
-                </tr>
-
-                <tr class="active_bg" shopid="0004">
-                    <td width="80%">新街口店</td>
-                    <td width="20%" align="right"></td>
-                </tr>
-
-                <tr class="active_bg" shopid="0005">
-                    <td width="80%">江宁店</td>
-                    <td width="20%" align="right"></td>
-                </tr>
-
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
+<!--<div id="dialog_JS_SelectShop" style="bottom: 0px;">-->
+<!--    <p class="dialog_title">选择门店</p>-->
+<!---->
+<!--    <p class="btn_valid btn_finish" id="selShop">完成</p>-->
+<!---->
+<!--    <div class="listData_Box">-->
+<!--        <div class="mobilescroll" style="max-height:200px; overflow:hidden;">-->
+<!--            <table cellpadding="0" cellspacing="0" border="0" class="listTab2 JS_listData backColor" width="100%"-->
+<!--                   bgcolor="#FFF" id="label_JS_listShop">-->
+<!---->
+<!--                <tbody>-->
+<!--                <tr class="active_bg" shopid="0002">-->
+<!--                    <td width="80%" style="font-weight: bold; color: rgb(56, 84, 136); border-top-left-radius: 8px;">-->
+<!--                        珠江路店-->
+<!--                    </td>-->
+<!--                    <td width="20%" align="right" style="border-top-right-radius: 8px;"><span class="icon_curr"></span>-->
+<!--                    </td>-->
+<!--                </tr>-->
+<!---->
+<!--                <tr class="active_bg" shopid="0003">-->
+<!--                    <td width="80%">中华门店</td>-->
+<!--                    <td width="20%" align="right"></td>-->
+<!--                </tr>-->
+<!---->
+<!--                <tr class="active_bg" shopid="0004">-->
+<!--                    <td width="80%">新街口店</td>-->
+<!--                    <td width="20%" align="right"></td>-->
+<!--                </tr>-->
+<!---->
+<!--                <tr class="active_bg" shopid="0005">-->
+<!--                    <td width="80%">江宁店</td>-->
+<!--                    <td width="20%" align="right"></td>-->
+<!--                </tr>-->
+<!---->
+<!--                </tbody>-->
+<!--            </table>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 <!--/dialog_JS_SelectShop-->
 <div data-role="footer" data-position="fixed" id="footer" class="ui-footer ui-bar-a ui-footer-fixed slideup"
      role="contentinfo">
